@@ -62,6 +62,14 @@
             >Register</a
           >
         </mat-list-item>
+        <mat-list-item>
+         
+          <a
+            [routerLink]="['/forgot']"
+            [queryParams]="{ returnUrl: returnUrl }"
+            >Forgot Password</a
+          >
+        </mat-list-item>
       </mat-list>
     </form>
   </mat-card-content>
