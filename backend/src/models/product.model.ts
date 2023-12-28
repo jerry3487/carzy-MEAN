@@ -29,6 +29,8 @@ export class Product {
   public price!: number;
   @prop({ required: true, default: 0 })
   public seats!: number;
+  @prop({ required: true })
+  public odometer!: number;
   // @prop({ required: true, default: 0 })
   // public rating!: number;
   // @prop({ required: true, default: 0 })

@@ -46,7 +46,7 @@ export class PlaceOrderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.titleService.setTitle('Shopping Cart');
+    this.titleService.setTitle('Booking Cart');
     this.cartService.currentCart.subscribe((x) => (this.cart = x));
   }
   goPayment() {
@@ -60,7 +60,7 @@ export class PlaceOrderComponent implements OnInit {
     this.loadingPlaceOrder = true;
     this.orderService.create(this.cart).subscribe(
       (order) => {
-        this.snackBar.open('Order placed successfully.', '', {
+        this.snackBar.open('Booking placed successfully.', '', {
           panelClass: 'success-snackbar',
         });
         this.loadingPlaceOrder = false;
@@ -77,7 +77,7 @@ export class PlaceOrderComponent implements OnInit {
   add(item: Item) {
     this.cartService.add(item).subscribe(
       (productName) =>
-        this.snackBar.open(`${productName} added to the cart`, '', {
+        this.snackBar.open(`${productName} added to the Booking`, '', {
           panelClass: 'success-snackbar',
         }),
       (err) => {
@@ -89,5 +89,21 @@ export class PlaceOrderComponent implements OnInit {
   remove(item: Item) {
     this.snackBar.dismiss();
     this.cartService.remove(item._id);
+  }
+  isActive: boolean = false;
+
+
+
+
+
+
+  
+  clickHandler(): void {
+    this.isActive = !this.isActive;
+    if (this.isActive) {
+      alert('Booking Cancelled');
+    } else {
+      alert(' Cancel Booking ');
+    }
   }
 }

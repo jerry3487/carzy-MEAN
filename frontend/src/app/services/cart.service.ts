@@ -58,7 +58,7 @@ export class CartService {
             (existItem && product.seats < existItem.days + 1) ||
             (!existItem && product.seats <= 0)
           ) {
-            throw new Error('product is out of stock');
+            throw new Error('Already car is Booked');
           }
           const items = existItem
             ? cart.items.map((x) =>
@@ -140,8 +140,9 @@ const calcCart = (items: Item[]) => {
   );
   const itemsCount = items.reduce((a, c) => a + c.days, 0);
   const shippingPrice = itemsPrice == 0 ? 0 : itemsPrice > 200 ? 0 : 20;
-  const taxPrice = round2(itemsPrice * 0.15);
-  const totalPrice = round2(itemsPrice + shippingPrice + taxPrice);
+  const taxPrice = round2(itemsPrice * 0.20);
+  const discount = round2(itemsPrice * 0.1);
+  const totalPrice = round2(itemsPrice + shippingPrice + taxPrice-discount);
 
   return {
     items: items,
@@ -149,6 +150,7 @@ const calcCart = (items: Item[]) => {
     itemsPrice,
     taxPrice,
     shippingPrice,
+    discount,
     totalPrice,
   };
 };

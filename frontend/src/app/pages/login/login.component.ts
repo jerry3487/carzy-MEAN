@@ -11,6 +11,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  captchaValue: string = '';
+
   form: FormGroup;
   loading = false;
   submitted = false;
@@ -30,12 +32,34 @@ export class LoginComponent implements OnInit {
 
     this.form = this.formBuilder.group({
       email: ['', Validators.email],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]],
+      captcha: ['', [Validators.required, this.captchaValidator.bind(this)]],
     });
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.generateCaptcha(); 
+  }
+
+  generateCaptcha() {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*';
+    let captcha = '';
+    for (let i = 0; i < 6; i++) {
+      captcha += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    this.captchaValue = captcha;
+  }
+  captchaValidator(control: { value: any; }) {
+    const inputCaptcha = control.value;
+    if (inputCaptcha === this.captchaValue) {
+      return null; // captcha is valid
+    } else {
+      return { invalidCaptcha: true }; // captcha is invalid
+    }
+  }
+
+
 
   onSubmit() {
     this.submitted = true;
@@ -57,5 +81,6 @@ export class LoginComponent implements OnInit {
           this.loading = false;
         }
       );
-  }
+  
+}
 }

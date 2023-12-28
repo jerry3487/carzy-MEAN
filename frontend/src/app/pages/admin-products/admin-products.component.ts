@@ -48,7 +48,7 @@ export class AdminProductsComponent implements OnInit {
       (data: any) => {
         this.products = data;
 
-        this.titleService.setTitle(`Product History`);
+        this.titleService.setTitle(`Booking History`);
         this.loading = false;
       },
       (err) => {
@@ -60,7 +60,7 @@ export class AdminProductsComponent implements OnInit {
   }
 
   createProduct() {
-    if (confirm('Are you sure to create product?')) {
+    if (confirm('Are you sure to create Booking?')) {
       this.productService.createProduct().subscribe(
         (data: any) => {
           this.router.navigate(['/admin/product/' + data._id]);
@@ -72,7 +72,7 @@ export class AdminProductsComponent implements OnInit {
     }
   }
   deleteProduct(productId: string) {
-    if (confirm('Are you sure to delete product?')) {
+    if (confirm('Are you sure to delete Booking?')) {
       this.productService.deleteProduct(productId).subscribe(
         (data: any) => {
           this.getAdminProducts();

@@ -65,10 +65,20 @@
             </button>
           </form>
         </div>
+        <a mat-button routerLink="about" style="padding-right:30px ;">
+          <mat-icon>assignment_ind</mat-icon>
+          
+          <span >About</span>
+        </a>
+        <a mat-button routerLink="offer" style="padding-right:30px ;">
+          <mat-icon>local_offer</mat-icon>
+          
+          <span >Offer</span>
+        </a>
 
-        <a mat-button routerLink="cart">
+        <a mat-button routerLink="cart" style="padding-right:30px ;">
           <mat-icon>commute</mat-icon>
-          <span *ngIf="itemsCount > 0" [matBadge]="itemsCount" matBadgePosition="after" matBadgeOverlap="false"
+          <span *ngIf="itemsCount > 0"  matBadgePosition="after" matBadgeOverlap="false"
             matBadgeColor="accent">Booking</span>
           <span *ngIf="itemsCount === 0">Booking</span>
         </a>

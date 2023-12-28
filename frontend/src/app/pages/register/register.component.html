@@ -36,6 +36,99 @@
               formControlName="password"
               required
             />
+            <mat-error *ngIf="form.get('password')?.hasError('required')">Please provide a valid password</mat-error>
+            <mat-error *ngIf="form.get('password')?.hasError('minlength')">Password must be at least 6 characters long</mat-error>
+            <mat-error *ngIf="form.get('password')?.hasError('maxlength')">Password must be at most 15 characters long</mat-error>
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              type="password"
+              placeholder="Repeat Password"
+              formControlName="repeatPassword"
+              required
+            />
+            <mat-error *ngIf="form.get('password')?.hasError('required')"> Please provide above password again</mat-error>
+            <!-- <mat-error *ngIf="form.get('password')!== form.get('repeatPassword')">Passwords do not match</mat-error> -->
+           
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-form-field class="full-width">
+              <input
+                matInput
+                type="captcha"
+                placeholder="enter captcha"
+                formControlName="captcha"
+                required
+              />
+            </mat-form-field>
+          </mat-list-item>
+        <div style="display: flex; align-items: center;padding-left:18px;">
+          <h3 style="color: green; margin-right: 10px;">Captcha:</h3>
+          <mat-icon style="margin-right: 5px;">sync</mat-icon>
+          <h3 style="margin: 0;">{{ captchaValue }}</h3>
+        </div>
+        <br><br>
+        <mat-list-item>
+          <button [disabled]="loading" mat-raised-button color="primary" style="width: 100%;">
+            Register
+          </button>
+          <mat-spinner [diameter]="30" *ngIf="loading"></mat-spinner>
+        </mat-list-item>
+
+        <mat-list-item>
+          Aready have an account? &nbsp;
+          <a [routerLink]="['/login']" [queryParams]="{ returnUrl: returnUrl }"
+            >login</a
+          >
+        </mat-list-item>
+      </mat-list>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<!-- 
+<mat-card>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h2>Register</h2>
+
+      <mat-list>
+        <mat-list-item>
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              placeholder="Name"
+              formControlName="name"
+              required
+            />
+            <mat-error> Please provide a name </mat-error>
+          </mat-form-field>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              placeholder="Email"
+              formControlName="email"
+              required
+            />
+            <mat-error> Please provide a valid email address </mat-error>
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-form-field class="full-width">
+            <input
+              matInput
+              type="password"
+              placeholder="Password"
+              formControlName="password"
+              required
+            />
             <mat-error> Please provide a valid password </mat-error>
           </mat-form-field>
         </mat-list-item>
@@ -67,4 +160,4 @@
       </mat-list>
     </form>
   </mat-card-content>
-</mat-card>
+</mat-card> -->

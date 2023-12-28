@@ -37,7 +37,7 @@ export class CartComponent implements OnInit {
   add(item: Item) {
     this.cartService.add(item).subscribe(
       (productName) =>
-        this.snackBar.open(`${productName} added to the cart`, '', {
+        this.snackBar.open(`${productName} added to the Booking`, '', {
           panelClass: 'success-snackbar',
         }),
       (err) => {
@@ -52,9 +52,28 @@ export class CartComponent implements OnInit {
   }
   checkout() {
     if (this.cart.itemsCount === 0) {
-      this.snackBar.open('Cart is empty', '', { panelClass: 'error-snackbar' });
+      this.snackBar.open('Booking is empty', '', { panelClass: 'error-snackbar' });
       return;
     }
     this.router.navigate(['/shipping']);
   }
+
+  selectedDistance: number | undefined;
+  loyaltyBonus: number = 0;
+
+  
+
+  calculateLoyalty() {
+    if (this.selectedDistance !== undefined) {
+      this.loyaltyBonus = Math.floor(this.selectedDistance / 50);
+    } else {
+      this.loyaltyBonus = 0;
+    }
+  }
+
+
+
+
 }
+
+

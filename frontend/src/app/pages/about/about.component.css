@@ -1,0 +1,30 @@
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-image: url('https://img.freepik.com/premium-photo/front-view-generic-brandless-moder-car_110488-502.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1703548800&semt=ais');
+    background-size: cover;
+    height: 100vh;
+    color: antiquewhite;
+  }
+  
+  .hero img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .hero h1 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+  

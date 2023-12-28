@@ -75,7 +75,7 @@ orderRouter.post(
   isAuth,
   asyncHandler(async (req: Request, res: Response) => {
     if (req.body.items.length === 0) {
-      res.status(400).send({ message: 'Cart is empty' });
+      res.status(400).send({ message: 'Booking is empty' });
     } else {
       const createdOrder = await OrderModel.create({
         items: req.body.items.map((x: any) => ({ ...x, product: x._id })),
@@ -100,7 +100,7 @@ orderRouter.get(
     if (order) {
       res.send(order);
     } else {
-      res.status(404).send({ message: 'Order Not Found' });
+      res.status(404).send({ message: 'Booking Not Found' });
     }
   })
 );
@@ -124,7 +124,7 @@ orderRouter.put(
 
       res.send(updatedOrder);
     } else {
-      res.status(404).send({ message: 'Order Not Found' });
+      res.status(404).send({ message: 'Booking Not Found' });
     }
   })
 );
@@ -137,9 +137,9 @@ orderRouter.delete(
     const order = await OrderModel.findById(req.params.id);
     if (order) {
       const deleteOrder = await order.remove();
-      res.send({ message: 'Order Deleted', order: deleteOrder });
+      res.send({ message: 'Booking Deleted', order: deleteOrder });
     } else {
-      res.status(404).send({ message: 'Order Not Found' });
+      res.status(404).send({ message: 'Booking Not Found' });
     }
   })
 );
@@ -156,9 +156,9 @@ orderRouter.put(
       // order.deliveredAt = Date.now();
 
       const updatedOrder = await order.save();
-      res.send({ message: 'Order Delivered', order: updatedOrder });
+      res.send({ message: 'Booking Delivered', order: updatedOrder });
     } else {
-      res.status(404).send({ message: 'Order Not Found' });
+      res.status(404).send({ message: 'Booking Not Found' });
     }
   })
 );

@@ -1,0 +1,19 @@
+<div class="forgot" style="margin:100px 550px 80px 550px; padding:10px;">
+    <b><h1 style="color:red; text-align:center;">Forgot Password</h1></b>
+    
+    <form [formGroup]="formGroup" (ngSubmit)="handleSubmit()">
+      <div *ngIf="error" style="color:red;">{{ error }}</div>
+      
+      <label for="email">Email id</label>
+      <input type="email" id="email" placeholder="Email id" formControlName="email" required class="input input-bordered w-full mb-6"><br/>
+      
+      <label for="newpassword">Enter New Password</label>
+      <input type="password" id="newpassword" placeholder="********" formControlName="newPassword" required class="input input-bordered w-full mb-6"><br/>
+      
+      <label for="cnfpassword">Confirm New Password</label>
+      <input type="password" id="cnfpassword" placeholder="********" formControlName="confirmPassword" required class="input input-bordered w-full mb-6"><br/>
+      
+      <button type="submit" style="margin:10px 0; padding:10px; background-color:#007BFF; color:#fff; border:none; border-radius:5px; cursor:pointer; width:100%;">Submit</button>
+    </form>
+  </div>
+  

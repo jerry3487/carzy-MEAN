@@ -53,6 +53,9 @@ import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { AdminProductEditComponent } from './pages/admin-product-edit/admin-product-edit.component';
 import { AdminUsersComponent } from './pages/admin-users/admin-users.component';
 import { AdminUserEditComponent } from './pages/admin-user-edit/admin-user-edit.component';
+import { OfferComponent } from './pages/offer/offer.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ForgotComponent } from './pages/forgot/forgot.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +78,9 @@ import { AdminUserEditComponent } from './pages/admin-user-edit/admin-user-edit.
     AdminUsersComponent,
     AdminUserEditComponent,
     RatingComponent,
+    OfferComponent,
+    AboutComponent,
+    ForgotComponent,
   ],
   imports: [
     BrowserModule,

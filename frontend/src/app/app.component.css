@@ -8,9 +8,12 @@
   padding: 20px;
   /* max-width: 980px; */
   min-height: 70vh;
+  background-color: antiquewhite;
 }
 .footer {
   text-align: center;
+  background-color: rgb(10, 10, 36);
+  color: azure;
 }
 
 .sidenav .header {

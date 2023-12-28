@@ -3,7 +3,7 @@
 </div>
 <ng-template #result>
   <ng-container *ngIf="!error">
-    <h1>Booking ...{{ order._id.substring(19, 24) }}</h1>
+    <h1>Booking ...{{ order._id}}</h1>
     <div fxLayout="row wrap" fxLayoutGap="20px grid" fxLayoutGap.xs="10px grid">
       <div fxFlex="70%" fxFlex.xs="100%">
         <table mat-table [dataSource]="order.items" class="mat-elevation-z8">
@@ -130,6 +130,11 @@
               >
                 BOOK NOW
               </button>
+               
+
+              
+
+             
             </mat-list-item>
           </mat-list>
         </mat-card>

@@ -68,6 +68,27 @@
         </mat-list-item>
       </mat-list>
       <mat-card-actions>
+
+
+  
+          <!--Loyalty Bonus -->
+          
+        <mat-list-item>
+          <mat-form-field appearance="fill">
+            <div style="padding-left: 10px;">
+       <mat-label ><b>Distance (km)</b></mat-label>
+        <input matInput type="number" [(ngModel)]="selectedDistance" (input)="calculateLoyalty()">
+      </div>
+      </mat-form-field>
+  
+        <h3 style="text-align: center;">Loyalty Bonus: {{ loyaltyBonus }}</h3>
+       </mat-list-item>
+
+
+
+
+
+
         <button
           (click)="checkout()"
           class="full-width"

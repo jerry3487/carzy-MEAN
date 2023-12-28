@@ -47,7 +47,7 @@ export class OrderHistoryComponent implements OnInit {
       (data) => {
         this.orders = data;
 
-        this.titleService.setTitle(`Order History`);
+        this.titleService.setTitle(`Booking History`);
         this.loading = false;
       },
       (err) => {

@@ -29,6 +29,7 @@ export class ProductDetailsComponent implements OnInit {
     brand: '',
     category: '',
     carmodel: 0,
+    odometer: 0,
     seats: 0,
     slug: '',
     // rating: 0,
@@ -76,7 +77,7 @@ export class ProductDetailsComponent implements OnInit {
     } else {
       this.error = true;
       this.loading = false;
-      this.snackBar.open('Product not found', '', {
+      this.snackBar.open('Booking not found', '', {
         panelClass: 'error-snackbar',
       });
     }
@@ -87,7 +88,7 @@ export class ProductDetailsComponent implements OnInit {
       .add({ _id, image, name, slug, price, days: 1 })
       .subscribe(
         (productName) => {
-          this.snackBar.open(`${productName} added to the cart`, '', {
+          this.snackBar.open(`${productName} added to the Booking`, '', {
             panelClass: 'success-snackbar',
           });
           this.router.navigate(['/cart']);

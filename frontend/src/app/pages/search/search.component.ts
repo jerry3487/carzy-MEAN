@@ -59,7 +59,7 @@ export class SearchComponent {
       .add({ _id, image, name, slug, price, days: 1 })
       .subscribe(
         (productName) =>
-          this.snackBar.open(`${productName} added to the cart`, '', {
+          this.snackBar.open(`${productName} added to the Booking`, '', {
             panelClass: 'success-snackbar',
           }),
         (err) => {

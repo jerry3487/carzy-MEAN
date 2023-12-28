@@ -22,6 +22,7 @@ export class AdminProductEditComponent implements OnInit {
     brand: '',
     category: '',
     carmodel: 0,
+    odometer:0,
     seats: 0,
     // rating: 0,
     // numReviews: 0,
@@ -50,6 +51,7 @@ export class AdminProductEditComponent implements OnInit {
       brand: ['', Validators.required],
       category: ['', Validators.required],
       carmodel: ['', Validators.required],
+      odometer: ['', Validators.required],
       seats: ['', Validators.required],
     });
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
@@ -69,8 +71,9 @@ export class AdminProductEditComponent implements OnInit {
           this.form.patchValue({ category: product.category });
           this.form.patchValue({ brand: product.brand });
           this.form.patchValue({ carmodel: product.carmodel });
+          this.form.patchValue({ odometer: product.odometer });
           this.form.patchValue({ seats: product.seats });
-          this.titleService.setTitle(`Admin Edit Product ${product._id}`);
+          this.titleService.setTitle(`Admin Edit Booking ${product._id}`);
         },
         (err: any) => {
           this.error = true;
@@ -120,6 +123,7 @@ export class AdminProductEditComponent implements OnInit {
       brand,
       seats,
       carmodel,
+      odometer,
     } = this.form.controls;
     this.loading = true;
     this.productService
@@ -133,13 +137,14 @@ export class AdminProductEditComponent implements OnInit {
         brand: brand.value,
         seats: seats.value,
         carmodel: carmodel.value,
+        odometer: odometer.value,
         // rating: this.product.rating,
         // numReviews: this.product.numReviews,
         // reviews: [],
       })
       .subscribe(
         () => {
-          this.snackBar.open('Product updated successfully', '', {
+          this.snackBar.open('Booking updated successfully', '', {
             panelClass: 'success-snackbar',
           });
           this.loading = false;

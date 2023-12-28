@@ -1,4 +1,5 @@
 export interface Product {
+odometer: any;
   _id: string;
   name: string;
   slug: string;

@@ -12,6 +12,7 @@ export const products: Product[] = [
     carmodel: 2020,
     price: 3500,
     seats: 5,
+    odometer:8000,
   },
   {
     name: "Mercedes-Benz A-Class Limousine",
@@ -22,6 +23,7 @@ export const products: Product[] = [
     carmodel: 2021,
     price: 4000,
     seats: 4,
+    odometer:8500,
   },
   {
     name: "MINI Cooper",
@@ -32,6 +34,7 @@ export const products: Product[] = [
     carmodel: 2022,
     price: 4000,
     seats: 2,
+    odometer:5000,
   },
   {
     name: "Audi A4",
@@ -42,6 +45,7 @@ export const products: Product[] = [
     carmodel: 2022,
     price: 2500,
     seats: 4,
+    odometer:6000,
   },
   {
     name: "Mahindra Scorpio N",
@@ -52,6 +56,7 @@ export const products: Product[] = [
     carmodel: 2022,
     price: 2000,
     seats: 6,
+    odometer:8000,
   },
   {
     name: "Hyundai Creta",
@@ -62,6 +67,8 @@ export const products: Product[] = [
     carmodel: 2020,
     price: 1500,
     seats: 5,
+    odometer:9000,
+    
   },
   {
     name: "Maruti Grand Vitara",
@@ -72,6 +79,7 @@ export const products: Product[] = [
     carmodel: 2019,
     price: 1800,
     seats: 5,
+    odometer:7000,
   },
   {
     name: "Tata Safari",
@@ -82,6 +90,7 @@ export const products: Product[] = [
     carmodel: 2017,
     price: 1300,
     seats: 7,
+    odometer:2000,
   },
   {
     name: "Hyundai Verna",
@@ -92,6 +101,7 @@ export const products: Product[] = [
     carmodel: 2020,
     price: 1500,
     seats: 5,
+    odometer:5200,
   },
   {
     name: "Skoda Slavia",
@@ -102,6 +112,7 @@ export const products: Product[] = [
     carmodel: 2018,
     price: 1200,
     seats: 5,
+    odometer:7500,
   },
   {
     name: "Honda City",
@@ -112,6 +123,7 @@ export const products: Product[] = [
     carmodel: 2017,
     price: 1200,
     seats: 5,
+    odometer:5200,
   },
   {
     name: "Volkswagen Virtus",
@@ -122,6 +134,7 @@ export const products: Product[] = [
     carmodel: 2020,
     price: 1600,
     seats: 5,
+    odometer:8900,
   },
   {
     name: "Maruti Dzire",
@@ -132,6 +145,7 @@ export const products: Product[] = [
     carmodel: 2021,
     price: 1000,
     seats: 5,
+    odometer:2600,
   },
   {
     name: "Honda Amaze",
@@ -142,6 +156,7 @@ export const products: Product[] = [
     carmodel: 2022,
     price: 1100,
     seats: 5,
+    odometer:7400,
   },
   {
     name: "Hyundai Aura",
@@ -152,6 +167,7 @@ export const products: Product[] = [
     carmodel: 2020,
     price: 900,
     seats: 5,
+    odometer:4500,
   },
   {
     name: "Tata Tigor EV",
@@ -162,6 +178,7 @@ export const products: Product[] = [
     carmodel: 2023,
     price: 2000,
     seats: 5,
+    odometer:5600,
   },
   {
     name: "Maruti Eeco",
@@ -172,6 +189,7 @@ export const products: Product[] = [
     carmodel: 2018,
     price: 1200,
     seats: 8,
+    odometer:9600,
   },
   {
     name: "Toyota Innova Crysta",
@@ -182,6 +200,7 @@ export const products: Product[] = [
     carmodel: 2020,
     price: 1500,
     seats: 8,
+    odometer:4500,
   },
   {
     name: "Toyota Fortuner",
@@ -192,6 +211,7 @@ export const products: Product[] = [
     carmodel: 2022,
     price: 1800,
     seats: 8,
+    odometer:6500,
   },
   {
     name: "Mahindra XUV300",
@@ -202,6 +222,8 @@ export const products: Product[] = [
     carmodel: 2018,
     price: 1000,
     seats: 8,
+    odometer:5600,
+    
   },
 ];
 
@@ -209,13 +231,13 @@ export const users: User[] = [
   {
     name: "admin",
     email: "admin@gmail.com",
-    password: bcrypt.hashSync('123') ,
+    password: bcrypt.hashSync('123456') ,
     isAdmin: true,
   },
   {
     name: "damo",
     email: "damo@gmail.com",
-    password: bcrypt.hashSync('123') ,
+    password: bcrypt.hashSync('123456') ,
     isAdmin: true,
   },
 ];

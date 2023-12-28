@@ -44,7 +44,7 @@ export class OrderComponent implements OnInit {
     if (orderId) {
       this.getOrder(orderId);
     } else {
-      this.snackBar.open('Order Not Found', '', {
+      this.snackBar.open('Booking Not Found', '', {
         panelClass: 'error-snackbar',
       });
     }
@@ -70,7 +70,7 @@ export class OrderComponent implements OnInit {
     this.orderService.deliver(this.order._id).subscribe(
       (data) => {
         this.getOrder(this.order._id);
-        this.snackBar.open('Order delivered successfully', '', {
+        this.snackBar.open('Booking delivered successfully', '', {
           panelClass: 'success-snackbar',
         });
       },

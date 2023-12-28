@@ -120,7 +120,7 @@ productRouter.get(
     if (product) {
       res.send(product);
     } else {
-      res.status(404).send({ message: 'Product Not Found' });
+      res.status(404).send({ message: 'Booking Not Found' });
     }
   })
 );
@@ -132,7 +132,7 @@ productRouter.get(
     if (product) {
       res.send(product);
     } else {
-      res.status(404).send({ message: 'Product Not Found' });
+      res.status(404).send({ message: 'Booking Not Found' });
     }
   })
 );
@@ -151,6 +151,7 @@ productRouter.post(
       brand: 'sample brand',
       seats: 0,
       carmodel: 0,
+      odometer:0,
     } as Product);
 
     const createdProduct = await product.save();
@@ -173,10 +174,12 @@ productRouter.put(
       product.brand = req.body.brand;
       product.seats = req.body.seats;
       product.carmodel = req.body.carmodel;
+      product.odometer = req.body.odometer;
+
       const updatedProduct = await product.save();
-      res.send({ message: 'Product Updated', product: updatedProduct });
+      res.send({ message: 'Booking Updated', product: updatedProduct });
     } else {
-      res.status(404).send({ message: 'Product Not Found' });
+      res.status(404).send({ message: 'Booking Not Found' });
     }
   })
 );
@@ -189,9 +192,9 @@ productRouter.delete(
     const product = await ProductModel.findById(req.params.id);
     if (product) {
       const deleteProduct = await product.remove();
-      res.send({ message: 'Product Deleted', product: deleteProduct });
+      res.send({ message: 'Booking Deleted', product: deleteProduct });
     } else {
-      res.status(404).send({ message: 'Product Not Found' });
+      res.status(404).send({ message: 'Booking Not Found' });
     }
   })
 );
