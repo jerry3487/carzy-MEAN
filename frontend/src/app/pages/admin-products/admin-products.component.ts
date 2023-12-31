@@ -60,7 +60,7 @@ export class AdminProductsComponent implements OnInit {
   }
 
   createProduct() {
-    if (confirm('Are you sure to create Booking?')) {
+    if (confirm('Are you sure to create car?')) {
       this.productService.createProduct().subscribe(
         (data: any) => {
           this.router.navigate(['/admin/product/' + data._id]);
@@ -72,7 +72,7 @@ export class AdminProductsComponent implements OnInit {
     }
   }
   deleteProduct(productId: string) {
-    if (confirm('Are you sure to delete Booking?')) {
+    if (confirm('Are you sure to delete car?')) {
       this.productService.deleteProduct(productId).subscribe(
         (data: any) => {
           this.getAdminProducts();

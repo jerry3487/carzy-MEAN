@@ -56,11 +56,11 @@
             <mat-list-item> Method: {{ order.paymentMethod }} </mat-list-item>
             <mat-list-item>
              
-              <div *ngIf="!order.isPaid && currentUser && !currentUser.isAdmin">
+              <!-- <div *ngIf="!order.isPaid && currentUser && !currentUser.isAdmin">
                 <button (click)="makePayment()" mat-raised-button color="primary">
                   MAKE PAYMENT
                 </button>
-              </div>
+              </div> -->
             </mat-list-item>
           </mat-list>
         </mat-card>
@@ -95,12 +95,12 @@
                 <div fxFlex="25%">Rs.{{ order.itemsPrice }}</div>
               </div>
             </mat-list-item>
-            <mat-list-item>
+            <!-- <mat-list-item>
               <div class="full-width" fxLayout="row">
                 <div fxFlex="75%">Pickup Fee :</div>
-                <div fxFlex="25%">Rs.{{ order.shippingPrice }}</div>
+                <div fxFlex="25%">Rs.0</div>
               </div>
-            </mat-list-item>
+            </mat-list-item> -->
             <mat-list-item>
               <div class="full-width" fxLayout="row">
                 <div fxFlex="75%">Tax :</div>

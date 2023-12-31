@@ -24,9 +24,7 @@ export class AdminProductEditComponent implements OnInit {
     carmodel: 0,
     odometer:0,
     seats: 0,
-    // rating: 0,
-    // numReviews: 0,
-    // reviews: [],
+   
   };
   uploadLoading = false;
   loading = false;
@@ -138,13 +136,11 @@ export class AdminProductEditComponent implements OnInit {
         seats: seats.value,
         carmodel: carmodel.value,
         odometer: odometer.value,
-        // rating: this.product.rating,
-        // numReviews: this.product.numReviews,
-        // reviews: [],
+      
       })
       .subscribe(
         () => {
-          this.snackBar.open('Booking updated successfully', '', {
+          this.snackBar.open('Car updated successfully', '', {
             panelClass: 'success-snackbar',
           });
           this.loading = false;

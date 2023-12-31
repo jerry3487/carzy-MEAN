@@ -134,15 +134,47 @@ export class CartService {
   }
 }
 
+
 const calcCart = (items: Item[]) => {
+
   const itemsPrice = round2(
     items.reduce((a, c) => a + c.price * c.days, 0)
   );
   const itemsCount = items.reduce((a, c) => a + c.days, 0);
-  const shippingPrice = itemsPrice == 0 ? 0 : itemsPrice > 200 ? 0 : 20;
-  const taxPrice = round2(itemsPrice * 0.20);
-  const discount = round2(itemsPrice * 0.1);
-  const totalPrice = round2(itemsPrice + shippingPrice + taxPrice-discount);
+  const shippingPrice = itemsPrice === 0 ? 0 : itemsPrice > 200 ? 0 : 20;
+
+  let taxPercentage = 0.1; // Default tax percentage for other items
+
+  items.forEach((item) => {
+    const carName = item.name.toLowerCase(); // Assuming car name is in lowercase
+    if (
+      carName === 'audi a4' ||
+      carName === 'mercedes-benz a-class limousine' ||
+      carName === 'mini cooper' ||
+      carName === 'bmw x7'
+    ) {
+      taxPercentage = 0.4; // 40% tax for Audi, Mercedes-Benz, MINI Cooper, BMW
+    } else if (
+      carName === 'tata safari' ||
+      carName === 'maruti grand vitara' ||
+      carName === 'hyundai creta' ||
+      carName === 'mahindra scorpio n' ||
+      carName === 'volkswagen' ||
+      carName === 'honda city' ||
+      carName === 'skoda slavia' ||
+      carName === 'hyundai verna'
+    ) {
+      taxPercentage = 0.2; // 20% tax for Tata Safari, Maruti Grand Vitara, Hyundai Creta, Mahindra Scorpio N, etc.
+    }else{
+      taxPercentage = 0.1;
+    }
+    
+  });
+
+  const taxPrice = round2(itemsPrice * taxPercentage);
+  const totalPrice = round2(itemsPrice + shippingPrice + taxPrice);
+
+ 
 
   return {
     items: items,
@@ -150,7 +182,6 @@ const calcCart = (items: Item[]) => {
     itemsPrice,
     taxPrice,
     shippingPrice,
-    discount,
+    
     totalPrice,
-  };
-};
+  };}

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -63,18 +63,14 @@ export class AdminDashboardComponent {
       (summary) => {
         this.numUsers =
           summary.users.length > 0 ? summary.users[0].numUsers : 0;
-        this.totalSales =
-          summary.orders.length > 0 ? summary.orders[0].totalSales : 0;
+        
         this.numOrders =
           summary.orders.length > 0 ? summary.orders[0].numOrders : 0;
 
         this.barChartData = {
           labels: summary.dailyOrders.map((x: any) => x._id),
           datasets: [
-            {
-              data: summary.dailyOrders.map((x: any) => x.sales),
-              label: 'Sales',
-            },
+            
             {
               data: summary.dailyOrders.map((x: any) => x.orders),
               label: 'Orders',
