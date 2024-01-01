@@ -1,7 +1,6 @@
 ﻿export interface User {
   _id: string;
   name: string;
-  // token: string;
   isAdmin: boolean;
 }
 export interface Credentials {

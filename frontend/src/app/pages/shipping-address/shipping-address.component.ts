@@ -10,7 +10,6 @@ import { CartService } from 'src/app/services/cart.service';
 @Component({
   selector: 'app-shipping-address',
   templateUrl: './shipping-address.component.html',
-  // encapsulation: ViewEncapsulation.None, //add this line
   styleUrls: ['./shipping-address.component.css'],
 })
 export class ShippingAddressComponent implements OnInit {

@@ -113,12 +113,6 @@
                   <div fxFlex="25%">Rs.{{ cart.itemsPrice }}</div>
                 </div>
               </mat-list-item>
-              <!-- <mat-list-item>
-                <div class="full-width" fxLayout="row">
-                  <div fxFlex="75%">Pickup fee :</div>
-                  <div fxFlex="25%">Rs.{{ cart.shippingPrice }}</div>
-                </div>
-              </mat-list-item> -->
               <mat-list-item>
                 <div class="full-width" fxLayout="row">
                   <div fxFlex="75%">Tax :</div>
@@ -148,16 +142,6 @@
                 *ngIf="loadingPlaceOrder"
               ></mat-spinner>
             </mat-card-actions>
-  
-            
-            <!-- <button
-           
-            class="full-width"
-            mat-raised-button
-            color="primary"
-          >
-            Cancel Booking
-          </button> -->
           <button (click)="clickHandler()" class="full-width"
           mat-raised-button
           color="primary">

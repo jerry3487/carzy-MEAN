@@ -112,8 +112,6 @@ orderRouter.put(
     const order = await OrderModel.findById(req.params.id).populate('user');
 
     if (order) {
-      // order.isPaid = true;
-      // order.paidAt = new Date(Date.now());
       order.paymentResult = {
         paymentId: req.body.id,
         status: req.body.status,
@@ -151,10 +149,6 @@ orderRouter.put(
   asyncHandler(async (req: Request, res: Response) => {
     const order = await OrderModel.findById(req.params.id);
     if (order) {
-      // order.isDelivered = true;
-      // order.deliveredAt = new Date(Date.now());
-      // order.deliveredAt = Date.now();
-
       const updatedOrder = await order.save();
       res.send({ message: 'Booking Delivered', order: updatedOrder });
     } else {

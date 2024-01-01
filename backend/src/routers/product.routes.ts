@@ -103,8 +103,6 @@ productRouter.get(
 productRouter.get(
   '/seed',
   asyncHandler(async (req: Request, res: Response) => {
-    // await UserModel.remove();
-    // await ProductModel.remove();
     const createdUsers = await UserModel.insertMany(users);
     const createdProducts = await ProductModel.insertMany(products);
     res.send({ createdUsers, createdProducts });

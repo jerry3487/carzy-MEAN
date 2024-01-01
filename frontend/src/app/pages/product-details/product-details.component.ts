@@ -32,9 +32,6 @@ export class ProductDetailsComponent implements OnInit {
     odometer: 0,
     seats: 0,
     slug: '',
-    // rating: 0,
-    // numReviews: 0,
-    // reviews: [],
   };
   constructor(
     private formBuilder: FormBuilder,

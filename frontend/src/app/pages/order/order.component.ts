@@ -80,8 +80,6 @@ export class OrderComponent implements OnInit {
     );
   }
   makePayment() {
-    // Add your payment processing logic here
-    // For demonstration, show a simple success message using MatSnackBar
     this.snackBar.open('Payment Successful!', '', {
       panelClass: 'success-snackbar',
     });

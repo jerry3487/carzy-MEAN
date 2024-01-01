@@ -9,9 +9,6 @@ odometer: any;
   category: string;
   carmodel: number;
   seats: number;
-  // rating: number;
-  // numReviews: number;
-  // reviews: any[];
 }
 
 export interface ProductFilter {

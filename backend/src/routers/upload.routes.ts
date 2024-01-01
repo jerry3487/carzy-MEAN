@@ -13,7 +13,6 @@ uploadRouter.post(
   isAdmin,
   upload.single('image'),
 
-  //asyncHandler(
   async (req: Request, res: Response) => {
     cloudinary.config({
       cloud_name: process.env.CLOUDINARY_CLOUD_NAME,

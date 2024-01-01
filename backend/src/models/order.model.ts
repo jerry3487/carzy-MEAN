@@ -18,10 +18,6 @@ class ShippingAddress {
   public postalCode?: string;
   @prop()
   public country?: string;
-  // @prop()
-  // public lat?: number;
-  // @prop()
-  // public lng?: number;
 }
 
 class Item {
@@ -65,20 +61,10 @@ export class Order {
   public paymentResult?: PaymentResult;
   @prop({ required: true, default: 0 })
   public itemsPrice!: number;
-  // @prop({ required: true, default: 0 })
-  // public shippingPrice!: number;
   @prop({ required: true, default: 0 })
   public taxPrice!: number;
   @prop({ required: true, default: 0 })
   public totalPrice!: number;
-  // @prop({ required: true, default: false })
-  // public isPaid!: boolean;
-  // @prop()
-  // public paidAt!: Date;
-  // @prop({ required: true, default: false })
-  // public isDelivered!: boolean;
-  // @prop()
-  // public deliveredAt!: Date;
 }
 
 export const OrderModel = getModelForClass(Order);
