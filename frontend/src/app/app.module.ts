@@ -24,7 +24,6 @@ import {
 } from '@angular/material/snack-bar';
 import { MatStepperModule } from '@angular/material/stepper';
 
-// Other Packages
 import { NgxPayPalModule } from 'ngx-paypal';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SwiperModule } from 'swiper/angular';

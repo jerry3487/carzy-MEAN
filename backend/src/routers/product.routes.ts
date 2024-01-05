@@ -143,10 +143,10 @@ productRouter.post(
   isAdmin,
   asyncHandler(async (req: Request, res: Response) => {
     const product = await ProductModel.create({
-      name: 'sample-name' + Date.now(),
+      name: 'Model-name' ,
       image: '../assets/images/p1.jpg',
       price: 0,
-      slug: 'sample-slug-' + Date.now(),
+      slug: 'car-name-' ,
       category: 'sample category',
       brand: 'sample brand',
       seats: 0,

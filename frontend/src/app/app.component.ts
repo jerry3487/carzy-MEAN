@@ -34,9 +34,9 @@ export class AppComponent {
   }
   ngOnInit() {
     this.authService.currentUser.subscribe((x) => (this.currentUser = x));
-    this.cartService.currentCart.subscribe(
-      (x) => (this.itemsCount = x.itemsCount)
-    );
+    // this.cartService.currentCart.subscribe(
+    //   (x) => (this.itemsCount = x.itemsCount)
+    // );
     this.productService
       .getCategories()
       .subscribe((categories) => (this.categories = categories));
